@@ -14,7 +14,7 @@ export default function App() {
           <a href="#top" className="brand" aria-label={`${site.name} — home`}>{site.name}<Dot /></a>
           <div className="nav-links">
             <a href="#do">Capabilities</a>
-            <a href="#featured">Work</a>
+            <a href="#index">Work</a>
             <a href="#ryuco">ryū co.</a>
             <a href="#cv">Experience</a>
             <a href="#contact">Contact</a>

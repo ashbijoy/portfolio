@@ -14,7 +14,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body {
   margin: 0;
   background: var(--paper);
@@ -103,7 +103,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .dark { background: var(--ink); color: var(--paper); }
 .dark .muted { color: var(--muted-dark); }
 .ry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
-.ry-title { margin: 14px 0 8px; font-weight: 600; font-size: clamp(64px, 8vw, 128px); line-height: .9; letter-spacing: -0.035em; }
+.ry-title { margin: 14px 0 28px; font-weight: 600; font-size: clamp(64px, 8vw, 128px); line-height: 1.05; letter-spacing: -0.035em; }
 .ry-sub { font-size: 20px; font-weight: 500; margin-bottom: 28px; }
 .ry-p { margin: 0 0 16px; max-width: 560px; font-size: 16px; line-height: 1.7; color: var(--soft-dark); }
 .ry-label { margin-top: 64px; font-size: 13px; }
