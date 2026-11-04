@@ -10,6 +10,7 @@ export const site = {
   fullName: 'Ashwin Bijoy',
   tagline: ['Creative', 'engineer.'],
   intro: 'A generalist working across design, product, AI and campaigns.',
+  bio: ['Jack of all trades?', 'Maybe I am just a court jester.'],
   status: 'Open to roles',
   email: 'ashwinbijoywork@gmail.com',
   // Set to '/files/your-resume.pdf' after adding a public version
@@ -22,7 +23,7 @@ export const site = {
   ],
   facts: [
     { label: 'Based', value: 'Adelaide, AU' },
-    { label: 'Studying', value: 'Master of IT (Cybersecurity)' },
+    { label: 'Studying', value: 'Master of IT (Enterprise Management)' },
     { label: 'Background', value: 'BE Computer Science (Data Science)' },
     { label: 'Founded', value: 'ryū co. (2024–26)' },
   ],
@@ -72,6 +73,7 @@ export const experience = [
   { role: 'Social Media Designer', org: 'Digital Advantage', years: 'Oct 2025 – Feb 2026', text: 'Curated Instagram for 6+ client brands; 20+ posts, carousels and promo graphics.' },
   { role: 'Creative Strategist', org: 'NGS', years: 'Jun 2023 – Feb 2026', text: 'End-to-end content strategy, 12–16 posts a month; 35–50% higher engagement over 4–6 months.' },
   { role: 'Game Design Intern', org: 'AEOS', years: 'Jan – Apr 2025', text: 'Rokoko MoCap capture and retargeting; 20+ character and environment animations in Blender.' },
+  { role: 'Generalist', org: 'Avigdor Cybertech', years: '', text: 'Worked across design, marketing and tech wherever the team needed it.' },
   { role: 'Founder & CEO', org: 'ryū co.', years: '2024 – 2026', text: 'Founded and ran a creative engineering agency offering performance marketing, landing pages and AI-powered lead systems.' },
 ];
 

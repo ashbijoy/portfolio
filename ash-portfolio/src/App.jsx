@@ -26,7 +26,10 @@ export default function App() {
 
       <main id="main">
         <header id="top" className="wrap hero">
-          <h1 className="wordmark">{site.name}<Dot /></h1>
+          <div className="hero-top">
+            <h1 className="wordmark">{site.name}<Dot /></h1>
+            <p className="bio">{site.bio[0]}<br /><span className="red">{site.bio[1]}</span></p>
+          </div>
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="tagline">{site.tagline[0]} <span className="red">{site.tagline[1]}</span></p>
