@@ -42,6 +42,7 @@ export const projects = [
   { name: 'SunriseRun Adelaide', category: 'Campaign · Posters', year: '2026' },
   { name: 'Digital Advantage', category: 'Social design · 6+ brands', year: '2025–26' },
   { name: 'NGS', category: 'Content strategy', year: '2023–26' },
+  { name: 'Avigdor Cybertech', category: 'Generalist · design, marketing & tech', year: '' },
   { name: 'AEOS', category: 'Game animation · 3D', year: '2025' },
 ];
 
