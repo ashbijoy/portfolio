@@ -2,6 +2,7 @@ import React from 'react';
 import { site, pillars, projects, ryuco, experience, tools, quote } from './data/content.js';
 import featured from './data/featured.json';
 import Gallery from './components/Gallery.jsx';
+import DeckViewer from './components/DeckViewer.jsx';
 
 const Dot = ({ className = '' }) => <span className={`dot ${className}`} aria-hidden="true" />;
 
@@ -11,7 +12,7 @@ export default function App() {
       <a className="skip" href="#main">Skip to content</a>
       <nav className="nav">
         <div className="wrap nav-inner">
-          <a href="#top" className="brand" aria-label={`${site.name} — home`}>{site.name}<Dot /></a>
+          <a href="#top" className="brand" aria-label={`${site.name}, home`}>{site.name}<Dot /></a>
           <div className="nav-links">
             <a href="#do">Capabilities</a>
             <a href="#index">Work</a>
@@ -39,10 +40,12 @@ export default function App() {
           </div>
         </header>
 
-        <section id="featured" className="wrap section-tight">
-          <div className="section-head ruled">
-            <h2 className="eyebrow">Featured work</h2>
-            <span className="muted">{featured.length} pieces · posters, type &amp; brand creatives</span>
+        <section id="featured" className="section-tight">
+          <div className="wrap">
+            <div className="section-head ruled">
+              <h2 className="eyebrow">Featured work</h2>
+              <span className="muted">{featured.length} pieces · hover to pause, click to view</span>
+            </div>
           </div>
           <Gallery items={featured} />
         </section>
@@ -88,7 +91,6 @@ export default function App() {
           <div className="wrap section">
             <div className="ry-grid">
               <div>
-                <div className="eyebrow red">{ryuco.label}</div>
                 <h2 className="ry-title"><span className="red">ryū</span> co.</h2>
                 <div className="ry-sub">{ryuco.subtitle}</div>
                 {ryuco.paragraphs.map((t) => <p key={t.slice(0, 20)} className="ry-p">{t}</p>)}
@@ -108,9 +110,7 @@ export default function App() {
             </div>
 
             <div className="eyebrow red ry-label">From the brand deck</div>
-            <div className="deck">
-              {ryuco.deck.map((d) => <img key={d.src} src={d.src} alt={d.alt} className="deck-img" loading="lazy" />)}
-            </div>
+            <DeckViewer slides={ryuco.deck} />
           </div>
         </section>
 

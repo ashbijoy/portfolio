@@ -45,13 +45,12 @@ export const projects = [
 ];
 
 export const ryuco = {
-  label: 'Past venture · Founder & CEO · 2024–2026',
   subtitle: 'Creative engineering agency',
   paragraphs: [
-    'A growth-focused creative agency I founded and ran from 2024 to 2026, helping brands scale through precision-driven marketing — conversion-led landing pages, high-performance Google and Meta campaigns, and intelligent lead generation that put quality over volume.',
-    'Run by creative engineers, it sat where strategy, creativity and technology meet: data-backed decisions plus AI-assisted tools, built for long-term performance rather than short-term spikes.',
+    'A growth-focused creative agency I founded and ran from 2024 to 2026. We helped brands scale with conversion-led landing pages, high-performance Google and Meta campaigns, and lead generation that put quality over volume.',
+    'Run by creative engineers, it sat where strategy, creativity and technology meet. Every decision was backed by data and sped up with AI tools, so clients got long-term performance instead of short-term spikes.',
   ],
-  cover: { src: '/images/ryuco/cover.jpg', alt: 'ryū co. — creative engineering agency, cover of the brand deck' },
+  cover: { src: '/images/ryuco/cover.jpg', alt: 'ryū co. creative engineering agency, cover of the brand deck' },
   services: [
     { title: 'Performance Marketing', text: 'Google and Meta campaigns, continuously tested and optimised.' },
     { title: 'Creative Strategy', text: 'Creative direction, messaging and formats for ads and landing pages.' },
@@ -60,10 +59,10 @@ export const ryuco = {
     { title: 'Analytics & Insights', text: 'Transparent tracking and reporting to guide growth decisions.' },
   ],
   deck: [
-    { src: '/images/ryuco/brand-colours.jpg', alt: 'ryū co. brand colours' },
-    { src: '/images/ryuco/why-ryuco.jpg', alt: 'Why ryū co.' },
-    { src: '/images/ryuco/market-insights.jpg', alt: 'ryū co. market insights' },
-    { src: '/images/ryuco/working-model.jpg', alt: 'ryū co. working model diagram' },
+    { src: '/images/ryuco/brand-colours.jpg', label: 'Brand colours', alt: 'ryū co. brand colours' },
+    { src: '/images/ryuco/why-ryuco.jpg', label: 'Why ryū co.', alt: 'Why ryū co.' },
+    { src: '/images/ryuco/market-insights.jpg', label: 'Market insights', alt: 'ryū co. market insights' },
+    { src: '/images/ryuco/working-model.jpg', label: 'Working model', alt: 'ryū co. working model diagram' },
   ],
 };
 
@@ -73,7 +72,7 @@ export const experience = [
   { role: 'Social Media Designer', org: 'Digital Advantage', years: 'Oct 2025 – Feb 2026', text: 'Curated Instagram for 6+ client brands; 20+ posts, carousels and promo graphics.' },
   { role: 'Creative Strategist', org: 'NGS', years: 'Jun 2023 – Feb 2026', text: 'End-to-end content strategy, 12–16 posts a month; 35–50% higher engagement over 4–6 months.' },
   { role: 'Game Design Intern', org: 'AEOS', years: 'Jan – Apr 2025', text: 'Rokoko MoCap capture and retargeting; 20+ character and environment animations in Blender.' },
-  { role: 'Founder & CEO', org: 'ryū co.', years: '2024 – 2026', text: 'Founded and ran a creative engineering agency — performance marketing, landing pages and AI-powered lead systems.' },
+  { role: 'Founder & CEO', org: 'ryū co.', years: '2024 – 2026', text: 'Founded and ran a creative engineering agency offering performance marketing, landing pages and AI-powered lead systems.' },
 ];
 
 export const tools = ['Photoshop', 'Illustrator', 'Premiere Pro', 'Canva', 'CapCut', 'Blender', 'Rokoko MoCap', 'Meta Business Suite', 'Google Analytics'];
