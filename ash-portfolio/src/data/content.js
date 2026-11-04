@@ -42,7 +42,7 @@ export const projects = [
   { name: 'SunriseRun Adelaide', category: 'Campaign · Posters', year: '2026' },
   { name: 'Digital Advantage', category: 'Social design · 6+ brands', year: '2025–26' },
   { name: 'NGS', category: 'Content strategy', year: '2023–26' },
-  { name: 'Avigdor Cybertech', category: 'Generalist · design, marketing & tech', year: '' },
+  { name: 'Avigdor Cybertech', category: 'Generalist · design, marketing & tech', year: '2024–25' },
   { name: 'AEOS', category: 'Game animation · 3D', year: '2025' },
 ];
 
@@ -74,7 +74,7 @@ export const experience = [
   { role: 'Social Media Designer', org: 'Digital Advantage', years: 'Oct 2025 – Feb 2026', text: 'Curated Instagram for 6+ client brands; 20+ posts, carousels and promo graphics.' },
   { role: 'Creative Strategist', org: 'NGS', years: 'Jun 2023 – Feb 2026', text: 'End-to-end content strategy, 12–16 posts a month; 35–50% higher engagement over 4–6 months.' },
   { role: 'Game Design Intern', org: 'AEOS', years: 'Jan – Apr 2025', text: 'Rokoko MoCap capture and retargeting; 20+ character and environment animations in Blender.' },
-  { role: 'Generalist', org: 'Avigdor Cybertech', years: '', text: 'Worked across design, marketing and tech wherever the team needed it.' },
+  { role: 'Generalist', org: 'Avigdor Cybertech', years: '2024 – 2025', text: 'Worked across design, marketing and tech wherever the team needed it.' },
   { role: 'Founder & CEO', org: 'ryū co.', years: '2024 – 2026', text: 'Founded and ran a creative engineering agency offering performance marketing, landing pages and AI-powered lead systems.' },
 ];
 
