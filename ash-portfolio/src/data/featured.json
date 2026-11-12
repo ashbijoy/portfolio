@@ -1,356 +1,600 @@
 [
  {
-  "src": "/images/featured/kishore-2.jpg",
+  "id": "kishore-2",
   "title": "Kishore",
-  "w": 800,
-  "h": 800
+  "series": null,
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/kishore-2-960.webp",
+  "srcSmall": "/images/work/kishore-2-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/shobhana-2.jpg",
+  "id": "shobhana-2",
   "title": "Shobhana",
-  "w": 800,
-  "h": 1000
+  "series": "Shobhana",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/shobhana-2-960.webp",
+  "srcSmall": "/images/work/shobhana-2-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/eiffel.jpg",
+  "id": "eiffel",
   "title": "Eiffel",
-  "w": 800,
-  "h": 1132
+  "series": null,
+  "w": 960,
+  "h": 1358,
+  "src": "/images/work/eiffel-960.webp",
+  "srcSmall": "/images/work/eiffel-480.webp",
+  "selected": true,
+  "selectedOrder": 4
  },
  {
-  "src": "/images/featured/mohan-lal-2.jpg",
+  "id": "mohan-lal-2",
   "title": "Mohan Lal",
-  "w": 800,
-  "h": 1000
+  "series": "Mohan Lal",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/mohan-lal-2-960.webp",
+  "srcSmall": "/images/work/mohan-lal-2-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/srinivasan.jpg",
+  "id": "srinivasan",
   "title": "Srinivasan",
-  "w": 800,
-  "h": 1000
+  "series": "Srinivasan",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/srinivasan-960.webp",
+  "srcSmall": "/images/work/srinivasan-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/mamdani-1.jpg",
+  "id": "mamdani-1",
   "title": "Mamdani",
-  "w": 800,
-  "h": 1000
+  "series": "Mamdani",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/mamdani-1-960.webp",
+  "srcSmall": "/images/work/mamdani-1-480.webp",
+  "selected": true,
+  "selectedOrder": 0
  },
  {
-  "src": "/images/featured/gambino.jpg",
+  "id": "gambino",
   "title": "Gambino",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/gambino-960.webp",
+  "srcSmall": "/images/work/gambino-480.webp",
+  "selected": true,
+  "selectedOrder": 7
  },
  {
-  "src": "/images/featured/yakult.jpg",
+  "id": "yakult",
   "title": "Yakult",
-  "w": 800,
-  "h": 800
+  "series": null,
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/yakult-960.webp",
+  "srcSmall": "/images/work/yakult-480.webp",
+  "selected": true,
+  "selectedOrder": 5
  },
  {
-  "src": "/images/featured/18.jpg",
+  "id": "18",
   "title": "Type Series",
-  "w": 800,
-  "h": 1000
+  "series": "Type Series",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/18-960.webp",
+  "srcSmall": "/images/work/18-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/bijoy-2.jpg",
+  "id": "bijoy-2",
   "title": "Bijoy",
-  "w": 800,
-  "h": 800
+  "series": "Bijoy",
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/bijoy-2-960.webp",
+  "srcSmall": "/images/work/bijoy-2-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/chair2.jpg",
+  "id": "chair2",
   "title": "Chair",
-  "w": 800,
-  "h": 800
+  "series": "Chair",
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/chair2-960.webp",
+  "srcSmall": "/images/work/chair2-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/freddie.jpg",
+  "id": "freddie",
   "title": "Freddie",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/freddie-960.webp",
+  "srcSmall": "/images/work/freddie-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/cetaphil.jpg",
+  "id": "cetaphil",
   "title": "Cetaphil",
-  "w": 800,
-  "h": 800
+  "series": null,
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/cetaphil-960.webp",
+  "srcSmall": "/images/work/cetaphil-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/dwight.jpg",
+  "id": "dwight",
   "title": "Dwight",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/dwight-960.webp",
+  "srcSmall": "/images/work/dwight-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/azadi.jpg",
+  "id": "azadi",
   "title": "Azadi",
-  "w": 800,
-  "h": 1000
+  "series": "Azadi",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/azadi-960.webp",
+  "srcSmall": "/images/work/azadi-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/stanczyk.jpg",
+  "id": "stanczyk",
   "title": "Stańczyk",
-  "w": 800,
-  "h": 800
+  "series": null,
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/stanczyk-960.webp",
+  "srcSmall": "/images/work/stanczyk-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/bijoy.jpg",
+  "id": "bijoy",
   "title": "Bijoy",
-  "w": 800,
-  "h": 800
+  "series": "Bijoy",
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/bijoy-960.webp",
+  "srcSmall": "/images/work/bijoy-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/masayoshi.jpg",
+  "id": "masayoshi",
   "title": "Masayoshi",
-  "w": 800,
-  "h": 1000
+  "series": "Masayoshi",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/masayoshi-960.webp",
+  "srcSmall": "/images/work/masayoshi-480.webp",
+  "selected": true,
+  "selectedOrder": 2
  },
  {
-  "src": "/images/featured/carmy-1.jpg",
+  "id": "carmy-1",
   "title": "Carmy",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/carmy-1-960.webp",
+  "srcSmall": "/images/work/carmy-1-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/kim.jpg",
+  "id": "kim",
   "title": "Kim",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/kim-960.webp",
+  "srcSmall": "/images/work/kim-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/big-ben.jpg",
+  "id": "big-ben",
   "title": "Big Ben",
-  "w": 800,
-  "h": 1132
+  "series": null,
+  "w": 960,
+  "h": 1358,
+  "src": "/images/work/big-ben-960.webp",
+  "srcSmall": "/images/work/big-ben-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/shobhana.jpg",
+  "id": "shobhana",
   "title": "Shobhana",
-  "w": 800,
-  "h": 1000
+  "series": "Shobhana",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/shobhana-960.webp",
+  "srcSmall": "/images/work/shobhana-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/masayoshi-2.jpg",
+  "id": "masayoshi-2",
   "title": "Masayoshi",
-  "w": 800,
-  "h": 1000
+  "series": "Masayoshi",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/masayoshi-2-960.webp",
+  "srcSmall": "/images/work/masayoshi-2-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/weird-fishes-4.jpg",
+  "id": "weird-fishes-4",
   "title": "Weird Fishes",
-  "w": 800,
-  "h": 1000
+  "series": "Weird Fishes",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/weird-fishes-4-960.webp",
+  "srcSmall": "/images/work/weird-fishes-4-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/shobhana-3.jpg",
+  "id": "shobhana-3",
   "title": "Shobhana",
-  "w": 800,
-  "h": 1000
+  "series": "Shobhana",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/shobhana-3-960.webp",
+  "srcSmall": "/images/work/shobhana-3-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/azadi-1.jpg",
+  "id": "azadi-1",
   "title": "Azadi",
-  "w": 800,
-  "h": 1000
+  "series": "Azadi",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/azadi-1-960.webp",
+  "srcSmall": "/images/work/azadi-1-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/mohan-lal-3.jpg",
+  "id": "mohan-lal-3",
   "title": "Mohan Lal",
-  "w": 800,
-  "h": 1000
+  "series": "Mohan Lal",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/mohan-lal-3-960.webp",
+  "srcSmall": "/images/work/mohan-lal-3-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/amul-butter.jpg",
+  "id": "amul-butter",
   "title": "Amul Butter",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/amul-butter-960.webp",
+  "srcSmall": "/images/work/amul-butter-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/ishu.jpg",
+  "id": "ishu",
   "title": "Ishu",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/ishu-960.webp",
+  "srcSmall": "/images/work/ishu-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/ted-lasso.jpg",
+  "id": "ted-lasso",
   "title": "Ted Lasso",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/ted-lasso-960.webp",
+  "srcSmall": "/images/work/ted-lasso-480.webp",
+  "selected": true,
+  "selectedOrder": 3
  },
  {
-  "src": "/images/featured/36.jpg",
+  "id": "36",
   "title": "Type Series",
-  "w": 800,
-  "h": 1000
+  "series": "Type Series",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/36-960.webp",
+  "srcSmall": "/images/work/36-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/weird-fishes.jpg",
+  "id": "weird-fishes",
   "title": "Weird Fishes",
-  "w": 800,
-  "h": 1000
+  "series": "Weird Fishes",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/weird-fishes-960.webp",
+  "srcSmall": "/images/work/weird-fishes-480.webp",
+  "selected": true,
+  "selectedOrder": 1
  },
  {
-  "src": "/images/featured/srinivasan-3.jpg",
+  "id": "srinivasan-3",
   "title": "Srinivasan",
-  "w": 800,
-  "h": 1000
+  "series": "Srinivasan",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/srinivasan-3-960.webp",
+  "srcSmall": "/images/work/srinivasan-3-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/mango.jpg",
+  "id": "mango",
   "title": "Mango",
-  "w": 800,
-  "h": 800
+  "series": null,
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/mango-960.webp",
+  "srcSmall": "/images/work/mango-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/azh.jpg",
+  "id": "azh",
   "title": "<azh.>",
-  "w": 800,
-  "h": 800
+  "series": null,
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/azh-960.webp",
+  "srcSmall": "/images/work/azh-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/srinivasan-2.jpg",
+  "id": "srinivasan-2",
   "title": "Srinivasan",
-  "w": 800,
-  "h": 1000
+  "series": "Srinivasan",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/srinivasan-2-960.webp",
+  "srcSmall": "/images/work/srinivasan-2-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/pray-for-me.jpg",
+  "id": "pray-for-me",
   "title": "Pray For Me",
-  "w": 800,
-  "h": 800
+  "series": null,
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/pray-for-me-960.webp",
+  "srcSmall": "/images/work/pray-for-me-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/mamdani-3.jpg",
+  "id": "mamdani-3",
   "title": "Mamdani",
-  "w": 800,
-  "h": 1000
+  "series": "Mamdani",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/mamdani-3-960.webp",
+  "srcSmall": "/images/work/mamdani-3-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/richie.jpg",
+  "id": "richie",
   "title": "Richie",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/richie-960.webp",
+  "srcSmall": "/images/work/richie-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/tyler.jpg",
+  "id": "tyler",
   "title": "Tyler",
-  "w": 800,
-  "h": 800
+  "series": "Tyler",
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/tyler-960.webp",
+  "srcSmall": "/images/work/tyler-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/weird-fishes-2.jpg",
+  "id": "weird-fishes-2",
   "title": "Weird Fishes",
-  "w": 800,
-  "h": 1000
+  "series": "Weird Fishes",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/weird-fishes-2-960.webp",
+  "srcSmall": "/images/work/weird-fishes-2-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/dead-poets-society.jpg",
+  "id": "dead-poets-society",
   "title": "Dead Poets Society",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/dead-poets-society-960.webp",
+  "srcSmall": "/images/work/dead-poets-society-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/diet-coke.jpg",
+  "id": "diet-coke",
   "title": "Diet Coke",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/diet-coke-960.webp",
+  "srcSmall": "/images/work/diet-coke-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/41.jpg",
+  "id": "41",
   "title": "Type Series",
-  "w": 800,
-  "h": 1000
+  "series": "Type Series",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/41-960.webp",
+  "srcSmall": "/images/work/41-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/37.jpg",
+  "id": "37",
   "title": "Type Series",
-  "w": 800,
-  "h": 1000
+  "series": "Type Series",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/37-960.webp",
+  "srcSmall": "/images/work/37-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/listen.jpg",
+  "id": "listen",
   "title": "Listen",
-  "w": 800,
-  "h": 800
+  "series": null,
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/listen-960.webp",
+  "srcSmall": "/images/work/listen-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/mac-demarco.jpg",
+  "id": "mac-demarco",
   "title": "Mac DeMarco",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/mac-demarco-960.webp",
+  "srcSmall": "/images/work/mac-demarco-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/weird-fishes-3.jpg",
+  "id": "weird-fishes-3",
   "title": "Weird Fishes",
-  "w": 800,
-  "h": 1000
+  "series": "Weird Fishes",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/weird-fishes-3-960.webp",
+  "srcSmall": "/images/work/weird-fishes-3-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/masayoshi-3.jpg",
+  "id": "masayoshi-3",
   "title": "Masayoshi",
-  "w": 800,
-  "h": 1000
+  "series": "Masayoshi",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/masayoshi-3-960.webp",
+  "srcSmall": "/images/work/masayoshi-3-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/chair.jpg",
+  "id": "chair",
   "title": "Chair",
-  "w": 800,
-  "h": 800
+  "series": "Chair",
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/chair-960.webp",
+  "srcSmall": "/images/work/chair-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/asap.jpg",
+  "id": "asap",
   "title": "ASAP",
-  "w": 800,
-  "h": 800
+  "series": null,
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/asap-960.webp",
+  "srcSmall": "/images/work/asap-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/mamdani-2.jpg",
+  "id": "mamdani-2",
   "title": "Mamdani",
-  "w": 800,
-  "h": 1000
+  "series": "Mamdani",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/mamdani-2-960.webp",
+  "srcSmall": "/images/work/mamdani-2-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/tyler-with-eye-2.jpg",
+  "id": "tyler-with-eye-2",
   "title": "Tyler",
-  "w": 800,
-  "h": 800
+  "series": "Tyler",
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/tyler-with-eye-2-960.webp",
+  "srcSmall": "/images/work/tyler-with-eye-2-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/40.jpg",
+  "id": "40",
   "title": "Type Series",
-  "w": 800,
-  "h": 1000
+  "series": "Type Series",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/40-960.webp",
+  "srcSmall": "/images/work/40-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/39.jpg",
+  "id": "39",
   "title": "Type Series",
-  "w": 800,
-  "h": 1000
+  "series": "Type Series",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/39-960.webp",
+  "srcSmall": "/images/work/39-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/mohan-lal.jpg",
+  "id": "mohan-lal",
   "title": "Mohan Lal",
-  "w": 800,
-  "h": 1000
+  "series": "Mohan Lal",
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/mohan-lal-960.webp",
+  "srcSmall": "/images/work/mohan-lal-480.webp",
+  "selected": true,
+  "selectedOrder": 6
  },
  {
-  "src": "/images/featured/colosseum.jpg",
+  "id": "colosseum",
   "title": "Colosseum",
-  "w": 800,
-  "h": 1132
+  "series": null,
+  "w": 960,
+  "h": 1358,
+  "src": "/images/work/colosseum-960.webp",
+  "srcSmall": "/images/work/colosseum-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/clare.jpg",
+  "id": "clare",
   "title": "Clare",
-  "w": 800,
-  "h": 1000
+  "series": null,
+  "w": 960,
+  "h": 1200,
+  "src": "/images/work/clare-960.webp",
+  "srcSmall": "/images/work/clare-480.webp",
+  "selected": false
  },
  {
-  "src": "/images/featured/bijoy-3.jpg",
+  "id": "bijoy-3",
   "title": "Bijoy",
-  "w": 800,
-  "h": 800
+  "series": "Bijoy",
+  "w": 960,
+  "h": 960,
+  "src": "/images/work/bijoy-3-960.webp",
+  "srcSmall": "/images/work/bijoy-3-480.webp",
+  "selected": false
  }
 ]

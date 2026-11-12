@@ -1,71 +1,140 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import Lightbox from './Lightbox.jsx';
 
-// Infinite sliding carousel (two rows, opposite directions).
-// Hover pauses the row and enlarges a design; click opens it full screen.
-// In the full-screen view, use ← / → to browse and Esc to close.
-export default function Gallery({ items }) {
-  const [open, setOpen] = useState(null);
+const SPEED = 28; // px per second
 
-  const rows = useMemo(
-    () => [items.filter((_, i) => i % 2 === 0), items.filter((_, i) => i % 2 === 1)],
-    [items]
-  );
+function seriesInfo(items) {
+  const counts = {};
+  items.forEach((it) => { if (it.series) counts[it.series] = (counts[it.series] || 0) + 1; });
+  const seen = {};
+  return items.map((it) => {
+    if (!it.series) return { ...it, sub: null };
+    seen[it.series] = (seen[it.series] || 0) + 1;
+    return { ...it, sub: `series · ${seen[it.series]} of ${counts[it.series]}` };
+  });
+}
 
-  const close = useCallback(() => setOpen(null), []);
-  const step = useCallback((d) => setOpen((i) => (i + d + items.length) % items.length), [items.length]);
+// One endless row. Moves on its own; drag or swipe to scrub; hover pauses.
+function Row({ items, reverse, onOpen }) {
+  const viewport = useRef(null);
+  const track = useRef(null);
+  const state = useRef({ x: 0, half: 0, paused: false, drag: null, moved: false });
 
   useEffect(() => {
-    if (open === null) return;
-    const onKey = (e) => {
-      if (e.key === 'Escape') close();
-      if (e.key === 'ArrowRight') step(1);
-      if (e.key === 'ArrowLeft') step(-1);
+    const s = state.current;
+    const measure = () => { s.half = track.current ? track.current.scrollWidth / 2 : 0; };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(track.current);
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let raf; let last = performance.now();
+    const tick = (now) => {
+      const dt = Math.min(64, now - last) / 1000; last = now;
+      if (!s.paused && !s.drag && !reduce && s.half) s.x += (reverse ? SPEED : -SPEED) * dt;
+      if (s.half) { s.x %= s.half; if (s.x > 0) s.x -= s.half; }
+      if (track.current) track.current.style.transform = `translate3d(${s.x}px,0,0)`;
+      raf = requestAnimationFrame(tick);
     };
-    document.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
-    };
-  }, [open, close, step]);
+    raf = requestAnimationFrame(tick);
+    return () => { cancelAnimationFrame(raf); ro.disconnect(); };
+  }, [reverse]);
+
+  const down = (e) => {
+    const s = state.current;
+    s.drag = { startX: e.clientX, startPos: s.x, id: e.pointerId };
+    s.moved = false;
+  };
+  const move = (e) => {
+    const s = state.current;
+    if (!s.drag) return;
+    const dx = e.clientX - s.drag.startX;
+    if (Math.abs(dx) > 6 && !s.moved) {
+      s.moved = true;
+      viewport.current.setPointerCapture(s.drag.id);
+    }
+    if (s.moved) s.x = s.drag.startPos + dx;
+  };
+  const up = () => { state.current.drag = null; };
+
+  const doubled = [...items, ...items];
+  return (
+    <div
+      ref={viewport}
+      className="marquee"
+      onMouseEnter={() => { state.current.paused = true; }}
+      onMouseLeave={() => { state.current.paused = false; state.current.drag = null; }}
+      onPointerDown={down}
+      onPointerMove={move}
+      onPointerUp={up}
+      onPointerCancel={up}
+    >
+      <div ref={track} className="track">
+        {doubled.map((it, k) => {
+          const dup = k >= items.length;
+          return (
+            <button
+              key={k}
+              className="tile"
+              onClick={(e) => { if (state.current.moved) { e.preventDefault(); return; } onOpen(it); }}
+              onFocus={() => { state.current.paused = true; }}
+              onBlur={() => { state.current.paused = false; }}
+              aria-label={`Open ${it.title}`}
+              aria-hidden={dup || undefined}
+              tabIndex={dup ? -1 : 0}
+            >
+              <img src={it.srcSmall} alt={dup ? '' : `${it.title}, design by ash`} width={480} height={Math.round(it.h / 2)} loading="lazy" decoding="async" draggable="false" />
+              <span className="cap">{it.title}{it.sub && <em> · {it.sub}</em>}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// Selected work (large, curated) + the full archive as two draggable rows.
+export default function Gallery({ items }) {
+  const all = useMemo(() => seriesInfo(items), [items]);
+  const selected = useMemo(
+    () => all.filter((i) => i.selected).sort((a, b) => (a.selectedOrder ?? 99) - (b.selectedOrder ?? 99)),
+    [all]
+  );
+  const rows = useMemo(() => [all.filter((_, i) => i % 2 === 0), all.filter((_, i) => i % 2 === 1)], [all]);
+
+  const [view, setView] = useState(null); // { list, i }
+  const open = (list, it) => setView({ list, i: list.indexOf(it) });
+  const close = useCallback(() => setView(null), []);
+  const step = useCallback((d) => setView((v) => ({ ...v, i: (v.i + d + v.list.length) % v.list.length })), []);
 
   return (
     <>
-      <div className="marquee-stack">
-        {rows.map((row, r) => (
-          <div className="marquee" key={r}>
-            <div className={`track${r ? ' reverse' : ''}`} style={{ '--dur': `${row.length * 6}s` }}>
-              {[...row, ...row].map((it, k) => {
-                const dup = k >= row.length;
-                return (
-                  <button
-                    key={k}
-                    className="tile"
-                    onClick={() => setOpen(items.indexOf(it))}
-                    aria-label={`Open ${it.title}`}
-                    aria-hidden={dup || undefined}
-                    tabIndex={dup ? -1 : 0}
-                  >
-                    <img src={it.src} alt={dup ? '' : `${it.title}, design by ash`} width={it.w} height={it.h} loading="lazy" decoding="async" />
-                    <span className="cap">{it.title}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        ))}
+      <div className="wrap">
+        <div className="selected">
+          {selected.map((it) => (
+            <button key={it.id} className="sel-tile" onClick={() => open(selected, it)} aria-label={`Open ${it.title}`}>
+              <img src={it.src} srcSet={`${it.srcSmall} 480w, ${it.src} 960w`} sizes="(max-width: 760px) 50vw, 25vw" alt={`${it.title}, design by ash`} width={it.w} height={it.h} loading="lazy" decoding="async" />
+              <span className="sel-cap"><span>{it.title}</span>{it.sub && <span className="muted">{it.sub.replace(/ · .*/, '')}</span>}</span>
+            </button>
+          ))}
+        </div>
+        <div className="section-head archive-head">
+          <h3 className="eyebrow">archive</h3>
+          <span className="muted">{all.length} pieces · drag to scroll, click to view</span>
+        </div>
       </div>
 
-      {open !== null && (
-        <div className="lightbox" role="dialog" aria-modal="true" aria-label={items[open].title} onClick={close}>
-          <img src={items[open].src} alt={`${items[open].title}, design by ash`} onClick={(e) => e.stopPropagation()} />
-          <div className="lb-bar" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => step(-1)} aria-label="Previous design">←</button>
-            <span>{items[open].title} <span className="muted">{open + 1} / {items.length}</span></span>
-            <button onClick={() => step(1)} aria-label="Next design">→</button>
-            <button onClick={close} aria-label="Close">✕</button>
-          </div>
-        </div>
+      <div className="marquee-stack">
+        {rows.map((row, r) => <Row key={r} items={row} reverse={r === 1} onOpen={(it) => open(all, it)} />)}
+      </div>
+
+      {view && (
+        <Lightbox
+          item={{ ...view.list[view.i], alt: `${view.list[view.i].title}, design by ash` }}
+          index={view.i}
+          total={view.list.length}
+          onClose={close}
+          onStep={step}
+        />
       )}
     </>
   );
