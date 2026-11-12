@@ -81,14 +81,16 @@ export default function App() {
               {site.name.split('').map((c, i) => <span key={i} className="wm-letter" style={{ animationDelay: `${i * 90}ms` }} aria-hidden="true">{c}</span>)}
               <Dot className="wm-dot" />
             </h1>
-            {site.photo
-              ? <img className="hero-photo" src={site.photo} alt={`${site.fullName}`} />
-              : <p className="bio">{site.bio[0]}<br /><span className="red">{site.bio[1]}</span></p>}
+            {site.photo && <img className="hero-photo" src={site.photo} alt={`${site.fullName}`} />}
+            <dl className="facts">
+              {site.facts.map((f) => (
+                <div key={f.label}><dt>{f.label}</dt><dd>{f.value}</dd></div>
+              ))}
+            </dl>
           </div>
-          <div className="hero-grid">
-            <div className="hero-copy">
-              <p className="tagline">{site.tagline[0]} <span className="red">{site.tagline[1]}</span></p>
-              {site.photo && <p className="bio bio-inline">{site.bio[0]} <span className="red">{site.bio[1]}</span></p>}
+          <div className="hero-copy">
+            <p className="tagline">{site.tagline[0]}<br /><span className="red">{site.tagline[1]}</span></p>
+            <div className="hero-bottom">
               <p className="roles"><span className="status-dot" aria-hidden="true" />{site.roles}</p>
               <div className="ctas">
                 <a className="btn" href="#index">view work ↓</a>
@@ -96,29 +98,18 @@ export default function App() {
                 {site.resume && <a className="btn-outline" href={site.resume} download>résumé ↓</a>}
               </div>
             </div>
-            <dl className="facts">
-              {site.facts.map((f) => (
-                <div key={f.label}><dt>{f.label}</dt><dd>{f.value}</dd></div>
-              ))}
-            </dl>
           </div>
         </header>
 
-        <section id="work" className="section-tight">
-          <div className="wrap">
-            <div className="section-head ruled">
-              <h2 className="eyebrow">selected work</h2>
-              <span className="muted">posters, type &amp; brand creatives</span>
-            </div>
-          </div>
+        <section id="work" className="panel panel-flush plain" data-num="01">
+          <h2 className="panel-label">designs</h2>
+          <div className="panel-head muted">{featured.length} posters, type &amp; brand creatives · drag to scroll, click to view</div>
           <Gallery items={featured} />
         </section>
 
-        <section id="do" className="wrap section">
-          <div className="section-head">
-            <h2 className="eyebrow">what I do</h2>
-            <span className="muted">design × product × tech</span>
-          </div>
+        <section id="do" className="panel plain" data-num="02">
+          <h2 className="panel-label">what I do</h2>
+          <div className="panel-head muted">design × product × tech</div>
           <div className="pillars">
             {pillars.map((p) => (
               <div className="pillar" key={p.n}>
@@ -131,19 +122,18 @@ export default function App() {
           </div>
         </section>
 
-        <section id="index" className="wrap section">
-          <div className="section-head">
-            <h2 className="eyebrow">index of work</h2>
-            <span className="muted">click a row for the case study</span>
-          </div>
+        <section id="index" className="panel" data-num="03">
+          <h2 className="panel-label">index of work</h2>
+          <div className="panel-head muted">click a row for the case study</div>
           <WorkIndex projects={projects} />
         </section>
 
-        <section id="ryuco" className="dark">
-          <div className="wrap section">
+        <section id="ryuco" className="panel dark" data-num="04">
+          <h2 className="panel-label">ryū co.</h2>
+          <div>
             <div className="ry-grid">
               <div>
-                <h2 className="ry-title"><span className="red">ryū</span> co.</h2>
+                <p className="ry-title" aria-hidden="true"><span className="red">ryū</span> co.</p>
                 <div className="ry-sub">{ryuco.subtitle} · {ryuco.years}</div>
                 {ryuco.paragraphs.map((t) => <p key={t.slice(0, 20)} className="ry-p">{t}</p>)}
               </div>
@@ -163,9 +153,9 @@ export default function App() {
           </div>
         </section>
 
-        <section id="cv" className="wrap section cv">
+        <section id="cv" className="panel cv" data-num="05">
+          <h2 className="panel-label">experience</h2>
           <aside className="cv-side">
-            <h2 className="eyebrow">experience</h2>
             <p className="cv-summary">Agencies, schools, events, a game studio and my own business, always mixing design with strategy.</p>
             <div className="stats">
               {stats.map((s) => (
@@ -194,10 +184,10 @@ export default function App() {
           </div>
         </section>
 
-        <section id="about" className="dark">
-          <div className="wrap section about">
+        <section id="about" className="panel dark" data-num="06">
+          <h2 className="panel-label">about</h2>
+          <div className="about">
             <div>
-              <h2 className="eyebrow red-dark">about</h2>
               {about.paragraphs.map((t) => <p key={t.slice(0, 20)} className="about-p">{t}</p>)}
             </div>
             <figure className="quote">
@@ -209,7 +199,8 @@ export default function App() {
         </section>
       </main>
 
-      <footer id="contact" className="wrap footer">
+      <footer id="contact" className="panel footer plain" data-num="07">
+        <h2 className="panel-label">contact</h2>
         <div className="muted">let's build something</div>
         <a className="mail" href={`mailto:${site.email}`}>{site.email} ↗</a>
         <div className="ctas">

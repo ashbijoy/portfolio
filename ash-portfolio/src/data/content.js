@@ -11,8 +11,7 @@
 export const site = {
   name: 'ash',
   fullName: 'Ashwin Bijoy',
-  tagline: ['creative', 'engineer.'],
-  bio: ['jack of all trades?', 'maybe I am just a court jester.'],
+  tagline: ['jack of all trades,', 'maybe I am just a court jester.'],
   roles: 'Open to business analyst, project manager, technical analyst and product design roles.',
   email: 'ashwinbijoywork@gmail.com',
   // Add a cut-out photo (PNG with transparent background) to /public/images/profile/
@@ -38,7 +37,7 @@ export const site = {
 export const about = {
   // Draft written from your résumé. Rewrite it in your own voice.
   paragraphs: [
-    "I'm Ashwin, a designer and IT postgrad in Adelaide. I move between posters, brand systems, content strategy and the tech underneath them, which is why I call myself a creative engineer.",
+    "I'm Ashwin, a designer and IT postgrad in Adelaide. I move between posters, brand systems, content strategy and the tech underneath them.",
     "I've run my own agency, led content for Ben & Jerry's Adelaide and designed campaigns that filled events. The common thread is curiosity: I like problems that need a designer's eye and an engineer's head at the same time.",
   ],
   quote: { text: ['be curious,', 'not judgemental.'], by: 'Ted Lasso' },

@@ -92,13 +92,9 @@ function Row({ items, reverse, onOpen }) {
   );
 }
 
-// Selected work (large, curated) + the full archive as two draggable rows.
+// All designs as two endless, draggable rows.
 export default function Gallery({ items }) {
   const all = useMemo(() => seriesInfo(items), [items]);
-  const selected = useMemo(
-    () => all.filter((i) => i.selected).sort((a, b) => (a.selectedOrder ?? 99) - (b.selectedOrder ?? 99)),
-    [all]
-  );
   const rows = useMemo(() => [all.filter((_, i) => i % 2 === 0), all.filter((_, i) => i % 2 === 1)], [all]);
 
   const [view, setView] = useState(null); // { list, i }
@@ -108,21 +104,6 @@ export default function Gallery({ items }) {
 
   return (
     <>
-      <div className="wrap">
-        <div className="selected">
-          {selected.map((it) => (
-            <button key={it.id} className="sel-tile" onClick={() => open(selected, it)} aria-label={`Open ${it.title}`}>
-              <img src={it.src} srcSet={`${it.srcSmall} 480w, ${it.src} 960w`} sizes="(max-width: 760px) 50vw, 25vw" alt={`${it.title}, design by ash`} width={it.w} height={it.h} loading="lazy" decoding="async" />
-              <span className="sel-cap"><span>{it.title}</span>{it.sub && <span className="muted">{it.sub.replace(/ · .*/, '')}</span>}</span>
-            </button>
-          ))}
-        </div>
-        <div className="section-head archive-head">
-          <h3 className="eyebrow">archive</h3>
-          <span className="muted">{all.length} pieces · drag to scroll, click to view</span>
-        </div>
-      </div>
-
       <div className="marquee-stack">
         {rows.map((row, r) => <Row key={r} items={row} reverse={r === 1} onOpen={(it) => open(all, it)} />)}
       </div>
