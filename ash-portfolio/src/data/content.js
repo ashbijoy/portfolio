@@ -26,12 +26,13 @@ export const site = {
     // { label: 'Instagram', href: 'https://www.instagram.com/...' },
     // { label: 'GitHub', href: 'https://github.com/ashbijoy' },
   ],
-  facts: [
-    { label: 'based', value: 'Adelaide, AU' },
-    { label: 'studying', value: 'Master of IT (Enterprise Management)' },
-    { label: 'background', value: 'BE Computer Science (Data Science)' },
-    { label: 'founded', value: 'ryū co. (2024 – 2026)' },
-  ],
+  // Text set into the hero frame: top-left, top-right, bottom-left, bottom-right.
+  frame: {
+    tl: 'ash. — portfolio',
+    tr: 'adelaide, au / 2026',
+    bl: 'master of IT (enterprise management)',
+    br: 'BE computer science (data science)',
+  },
 };
 
 export const about = {

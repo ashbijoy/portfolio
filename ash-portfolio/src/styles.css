@@ -79,9 +79,9 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   position: relative; max-width: none; margin: 40px 24px 40px; padding: 64px 48px 44px;
   border: var(--frame) solid var(--ink); border-radius: var(--radius);
 }
-.hero::before, .hero::after { position: absolute; top: -12px; background: var(--paper); padding: 0 10px; font-size: 13px; font-weight: 700; letter-spacing: .04em; line-height: 20px; }
-.hero::before { content: 'ash. — portfolio'; left: 40px; }
-.hero::after { content: 'adelaide, au / 2026'; right: 40px; }
+.frame-label { position: absolute; z-index: 1; background: var(--paper); padding: 0 10px; font-size: 13px; font-weight: 700; letter-spacing: .04em; line-height: 20px; white-space: nowrap; }
+.fl-tl, .fl-tr { top: -13px; } .fl-bl, .fl-br { bottom: -13px; }
+.fl-tl, .fl-bl { left: 40px; } .fl-tr, .fl-br { right: 40px; }
 
 /* Panels: every section sits in the same rounded Swiss frame */
 .panel { position: relative; margin: 0 24px 40px; padding: 56px 48px 48px; border: var(--frame) solid var(--ink); border-radius: var(--radius); }
@@ -103,6 +103,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .panel.dark { background: var(--ink); color: var(--paper); }
 .panel.dark .panel-head { color: var(--muted-dark); }
 .hero-top { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 48px; align-items: end; }
+.hero-top:not(:has(.hero-photo)) { display: block; }
 .wordmark { margin: 0; font-weight: 800; font-size: clamp(120px, 22vw, 340px); line-height: .85; letter-spacing: -0.04em; overflow: hidden; padding-bottom: .04em; }
 .wm-letter { display: inline-block; animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
 .wm-dot { animation: drop .8s cubic-bezier(.3,1.5,.5,1) .45s both; }
@@ -112,7 +113,6 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .bio-mobile { display: none; }
 .bio-inline { justify-self: start; text-align: left; font-size: 22px; margin: 14px 0 0; max-width: none; animation: none; }
 .hero-photo { justify-self: end; max-height: 360px; width: auto; filter: grayscale(1); }
-.hero-top .facts { justify-self: end; width: min(100%, 520px); margin-bottom: .6em; animation: fadeup .8s ease .5s both; }
 .hero-copy { margin-top: 36px; animation: fadeup .8s ease .65s both; }
 .hero-bottom { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 40px; margin-top: 22px; }
 .hero-bottom .roles { margin: 0; }
@@ -312,12 +312,12 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 @media (max-width: 760px) {
   :root { --frame: 4px; --radius: 20px; }
   .hero { margin: 28px 16px 28px; padding: 44px 20px 28px; }
-  .hero::before { left: 20px; top: -11px; font-size: 12px; }
-  .hero::after { display: none; }
+  .frame-label { font-size: 11px; padding: 0 8px; }
+  .fl-tl, .fl-bl { left: 18px; }
+  .fl-tr, .fl-br { display: none; }
   .hero { display: flex; flex-direction: column; }
   .hero-top { display: contents; }
   .wordmark { order: 1; } .hero-copy { order: 2; margin-top: 20px; }
-  .hero-top .facts { order: 3; justify-self: auto; width: auto; margin: 28px 0 0; }
   .tagline { font-size: 34px; }
   .panel.plain .panel-label { left: 20px; } .panel.plain::after { right: 20px; }
   .panel { margin: 0 16px 28px; padding: 44px 20px 28px; }

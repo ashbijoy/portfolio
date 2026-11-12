@@ -76,17 +76,16 @@ export default function App() {
 
       <main id="main">
         <header id="top" className="wrap hero">
+          {/* Details set into the frame edges, Swiss-poster style */}
+          {Object.entries(site.frame).map(([pos, text]) => (
+            <span key={pos} className={`frame-label fl-${pos}`}>{text}</span>
+          ))}
           <div className="hero-top">
             <h1 className="wordmark" aria-label={`${site.name}.`}>
               {site.name.split('').map((c, i) => <span key={i} className="wm-letter" style={{ animationDelay: `${i * 90}ms` }} aria-hidden="true">{c}</span>)}
               <Dot className="wm-dot" />
             </h1>
             {site.photo && <img className="hero-photo" src={site.photo} alt={`${site.fullName}`} />}
-            <dl className="facts">
-              {site.facts.map((f) => (
-                <div key={f.label}><dt>{f.label}</dt><dd>{f.value}</dd></div>
-              ))}
-            </dl>
           </div>
           <div className="hero-copy">
             <p className="tagline">{site.tagline[0]}<br /><span className="red">{site.tagline[1]}</span></p>
