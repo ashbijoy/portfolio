@@ -4,6 +4,12 @@ import featured from './data/featured.json';
 import Gallery from './components/Gallery.jsx';
 import DeckViewer from './components/DeckViewer.jsx';
 import WorkIndex from './components/WorkIndex.jsx';
+import JesterCursor from './components/JesterCursor.jsx';
+
+// Top row: the important designs ("selected": true in featured.json, ordered by selectedOrder).
+// Second row, after the index of work: everything else.
+const topDesigns = featured.filter((d) => d.selected).sort((a, b) => (a.selectedOrder ?? 99) - (b.selectedOrder ?? 99));
+const moreDesigns = featured.filter((d) => !d.selected);
 
 const Dot = ({ className = '' }) => <span className={`dot ${className}`} aria-hidden="true" />;
 
@@ -102,8 +108,8 @@ export default function App() {
 
         <section id="work" className="panel panel-flush plain" data-num="01">
           <h2 className="panel-label">designs</h2>
-          <div className="panel-head muted">{featured.length} posters, type &amp; brand creatives · drag to scroll, click to view</div>
-          <Gallery items={featured} />
+          <div className="panel-head muted">favourites · drag to scroll, click to view</div>
+          <Gallery items={topDesigns} />
         </section>
 
         <section id="do" className="panel plain" data-num="02">
@@ -127,7 +133,13 @@ export default function App() {
           <WorkIndex projects={projects} />
         </section>
 
-        <section id="ryuco" className="panel dark" data-num="04">
+        <section id="more-designs" className="panel panel-flush plain" data-num="04">
+          <h2 className="panel-label">more designs</h2>
+          <div className="panel-head muted">{moreDesigns.length} more posters, type &amp; brand creatives</div>
+          <Gallery items={moreDesigns} reverse />
+        </section>
+
+        <section id="ryuco" className="panel dark" data-num="05">
           <h2 className="panel-label">ryū co.</h2>
           <div>
             <div className="ry-grid">
@@ -152,7 +164,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="cv" className="panel cv" data-num="05">
+        <section id="cv" className="panel cv" data-num="06">
           <h2 className="panel-label">experience</h2>
           <aside className="cv-side">
             <p className="cv-summary">Agencies, schools, events, a game studio and my own business, always mixing design with strategy.</p>
@@ -183,7 +195,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="about" className="panel dark" data-num="06">
+        <section id="about" className="panel dark" data-num="07">
           <h2 className="panel-label">about</h2>
           <div className="about">
             <div>
@@ -198,7 +210,7 @@ export default function App() {
         </section>
       </main>
 
-      <footer id="contact" className="panel footer plain" data-num="07">
+      <footer id="contact" className="panel footer plain" data-num="08">
         <h2 className="panel-label">contact</h2>
         <div className="muted">let's build something</div>
         <a className="mail" href={`mailto:${site.email}`}>{site.email} ↗</a>
@@ -213,6 +225,7 @@ export default function App() {
           <span>© {new Date().getFullYear()} {site.name}<Dot /></span>
         </div>
       </footer>
+      <JesterCursor />
     </>
   );
 }

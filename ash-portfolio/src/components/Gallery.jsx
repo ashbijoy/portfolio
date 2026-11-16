@@ -8,7 +8,7 @@ function seriesInfo(items) {
   items.forEach((it) => { if (it.series) counts[it.series] = (counts[it.series] || 0) + 1; });
   const seen = {};
   return items.map((it) => {
-    if (!it.series) return { ...it, sub: null };
+    if (!it.series || counts[it.series] < 2) return { ...it, sub: null };
     seen[it.series] = (seen[it.series] || 0) + 1;
     return { ...it, sub: `series · ${seen[it.series]} of ${counts[it.series]}` };
   });
@@ -92,27 +92,31 @@ function Row({ items, reverse, onOpen }) {
   );
 }
 
-// All designs as two endless, draggable rows.
-export default function Gallery({ items }) {
+// One endless, draggable row of designs with its own full-screen viewer.
+// `reverse` slides the other way. Short lists are repeated so the loop never shows a gap.
+export default function Gallery({ items, reverse = false }) {
   const all = useMemo(() => seriesInfo(items), [items]);
-  const rows = useMemo(() => [all.filter((_, i) => i % 2 === 0), all.filter((_, i) => i % 2 === 1)], [all]);
+  const row = useMemo(() => {
+    let r = [...all];
+    while (r.length && r.length < 14) r = r.concat(all);
+    return r;
+  }, [all]);
 
-  const [view, setView] = useState(null); // { list, i }
-  const open = (list, it) => setView({ list, i: list.indexOf(it) });
+  const [view, setView] = useState(null); // index into `all`
   const close = useCallback(() => setView(null), []);
-  const step = useCallback((d) => setView((v) => ({ ...v, i: (v.i + d + v.list.length) % v.list.length })), []);
+  const step = useCallback((d) => setView((i) => (i + d + all.length) % all.length), [all.length]);
 
   return (
     <>
       <div className="marquee-stack">
-        {rows.map((row, r) => <Row key={r} items={row} reverse={r === 1} onOpen={(it) => open(all, it)} />)}
+        <Row items={row} reverse={reverse} onOpen={(it) => setView(all.findIndex((a) => a.id === it.id))} />
       </div>
 
-      {view && (
+      {view !== null && (
         <Lightbox
-          item={{ ...view.list[view.i], alt: `${view.list[view.i].title}, design by ash` }}
-          index={view.i}
-          total={view.list.length}
+          item={{ ...all[view], alt: `${all[view].title}, design by ash` }}
+          index={view}
+          total={all.length}
           onClose={close}
           onStep={step}
         />

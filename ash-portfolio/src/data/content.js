@@ -74,7 +74,7 @@ export const projects = [
   },
   {
     id: 'sunriserun', name: 'sunriserun adelaide', org: 'SunriseRun Adelaide', role: 'Creative Strategist',
-    category: 'campaign · posters', years: 'Feb 2026 – now', cover: null,
+    category: 'campaign · posters', years: 'Feb – Jun 2026', cover: null,
     summary: 'Content strategy and poster campaigns that grew a running community and its events.',
     did: [
       'Developed and executed content strategies to improve audience reach.',
@@ -126,13 +126,6 @@ export const projects = [
     ],
   },
   {
-    id: 'avigdor', name: 'avigdor cybertech', org: 'Avigdor Cybertech', role: 'Generalist',
-    category: 'generalist · design, marketing & tech', years: '2024 – 2025', cover: null,
-    summary: 'A generalist role across design, marketing and tech.',
-    did: ['Worked across design, marketing and tech wherever the team needed it.'],
-    results: [],
-  },
-  {
     id: 'aeos', name: 'aeos', org: 'AEOS', role: 'Game Design Intern',
     category: 'game animation · 3D', years: 'Jan – Apr 2025', cover: null,
     summary: 'Motion capture and animation for a game in development.',
@@ -141,6 +134,13 @@ export const projects = [
       'Designed and implemented 20+ character and environment animations in Blender.',
     ],
     results: [{ value: '20+', label: 'animations' }],
+  },
+  {
+    id: 'avigdor', name: 'avigdor cybertech', org: 'Avigdor Cybertech', role: 'Generalist',
+    category: 'generalist · design, marketing & tech', years: '2024 – 2025', cover: null,
+    summary: 'A generalist role across design, marketing and tech.',
+    did: ['Worked across design, marketing and tech wherever the team needed it.'],
+    results: [],
   },
 ];
 
